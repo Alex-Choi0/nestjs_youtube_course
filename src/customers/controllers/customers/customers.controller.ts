@@ -7,6 +7,6 @@ export class CustomersController {
 
   @Get(':id')
   getCustomer(@Param('id') id: number) {
-    return this.customersService.findCustomer(id);
+    return this.customersService.findCustomerById(id);
   }
 }

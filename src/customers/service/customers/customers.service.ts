@@ -5,21 +5,29 @@ export class CustomersService {
   private users = [
     {
       id: 1,
-      email: 'alex@gmail.com',
+      email: 'alex1@gmail.com',
+      createdAt: new Date(),
+    },
+    {
+      id: 2,
+      email: 'alex2@gmail.com',
+      createdAt: new Date(),
+    },
+    {
+      id: 3,
+      email: 'alex3@gmail.com',
+      createdAt: new Date(),
+    },
+    {
+      id: 4,
+      email: 'alex4@gmail.com',
       createdAt: new Date(),
     },
   ];
 
-  findCustomer(id: number) {
-    console.log('id : ', id);
-    console.log('id(typeof) : ', typeof id);
-    for (let i = 0; i < this.users.length; i++) {
-      console.log('DB id : ', this.users[i].id);
-      console.log(this.users[i].id === id);
-      if (this.users[i].id === Number(id)) {
-        return this.users[i];
-      }
-    }
-    return [];
+  findCustomerById(id: number) {
+    return this.users.find((user) => {
+      return user.id === id;
+    });
   }
 }
