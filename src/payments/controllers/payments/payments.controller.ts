@@ -22,5 +22,8 @@ export class PaymentsController {
   }
 
   @Post('create')
-  createPayment(@Body() createPaymentDto: CreatePaymentDto) {}
+  async createPayment(@Body() createPaymentDto: CreatePaymentDto) {
+    const response = await this.paymentsService.createPayment(createPaymentDto);
+    return response;
+  }
 }
